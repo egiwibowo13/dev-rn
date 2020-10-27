@@ -88,4 +88,8 @@ const typography = {
 
 };
 
+export const theme = {
+    colors, fontFamily, typography
+};
+
 export {colors, fontFamily, typography};
