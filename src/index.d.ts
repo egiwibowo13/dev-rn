@@ -6,3 +6,4 @@ export * from './components/types/Icon';
 export * from './components/types/BaseFlatList';
 export * from './components/types/Divider';
 export * from './components/types/Counter';
+export * from './components/types/CheckBox';
