@@ -63,8 +63,6 @@ const MyScreen = () => {
 
 
 ### Customize
-You just need to import `theme`, reassign the value you want to change and pass it to `ThemeProvider`. Example:  
-Default primary color is blue but you like orange so you can simply do:
 
 ```js
 //theme.config.js at root
@@ -96,7 +94,7 @@ export default yourTheme;
 
 
 ```js
-import { ThemeProvider } from 'react-native-design-system';
+import { ThemeProvider } from 'dev-rn';
 import yourTheme from './theme.config'
 
 const App = () => {
@@ -123,11 +121,11 @@ npm run test
   - [ ] [Container](src/)
   - [ ] [Grid](src/)
 - Input
-  - [x] [Button](src/components/Button/Button.js)
+  - [x] [Button](src/components/Input/Button/Button.js)
   - [x] [CheckBox](src/)
-  - [x] [Counter](src/components/Counter/Counter.js)
+  - [x] [Counter](src/components/Input/Counter/Counter.js)
   - [ ] [Date / Time](src/)
-  - [x] [FieldLabel](src/components/FieldLabel/FieldLabel.js)
+  - [x] [FieldLabel](src/components/Input/FieldLabel/FieldLabel.js)
   - [ ] [RadioButton](src/)
   - [ ] [SearchBar](src/)
   - [ ] [Slider](src/)
@@ -151,10 +149,10 @@ npm run test
   - [ ] [Badge](src/)
   - [ ] [Chip](src/)
   - [x] [Divider](src/)
-  - [x] [Icon](src/components/Icon/Icon.js)
+  - [x] [Icon](src/components/DataDisplay/Icon/Icon.js)
   - [ ] [List](src/)
   - [ ] [Tooltip](src/)
-  - [ ] [Typography / Text](src/components/Text/Text.js)
+  - [ ] [Typography / Text](src/components/DataDisplay/Text/Text.js)
 
 
 ## Author
