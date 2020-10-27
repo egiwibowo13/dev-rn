@@ -24,14 +24,17 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Button, Counter } from 'dev-rn';
+import { Button, Counter, CheckBox } from 'dev-rn';
+import IconSvg from './assets/svgs/ic_checked.svg';
 
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <Button title="uhuy" />
+      <Button title="uhuy" type="secondary" />
       <Counter value={1} minValue={0} maxValue={10} label="uhy" />
+      <CheckBox label="checkbox" checked />
+      <IconSvg color="red" />
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"

@@ -31,7 +31,7 @@ export const getContainerStyle = ({ size, width, type, theme }) => {
       ...buttonStyle,
       backgroundColor: theme.colors.eventInactive,
     });
-  } else if (type === 'outlined' || type === 'secundary') {
+  } else if (type === 'outlined' || type === 'secondary') {
     const styleOutline = {
       ...styles.shadow,
       ...buttonStyle,

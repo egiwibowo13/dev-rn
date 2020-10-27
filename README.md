@@ -22,6 +22,9 @@
 npm install dev-rn
 ```
 
+This library needs `react-native-svg` & `react-native-svg-transformer` so go on and install that too. Check out Install guide [react-native-svg](https://github.com/react-native-svg/react-native-svg#installation), [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer).
+
+
 ## Usage
 Dev RN uses a centralized theme to provide consistency across all the components.
 
@@ -121,7 +124,7 @@ npm run test
   - [ ] [Grid](src/)
 - Input
   - [x] [Button](src/components/Button/Button.js)
-  - [ ] [CheckBox](src/)
+  - [x] [CheckBox](src/)
   - [x] [Counter](src/components/Counter/Counter.js)
   - [ ] [Date / Time](src/)
   - [x] [FieldLabel](src/components/FieldLabel/FieldLabel.js)
@@ -147,8 +150,8 @@ npm run test
   - [ ] [Avatar](src/)
   - [ ] [Badge](src/)
   - [ ] [Chip](src/)
-  - [ ] [Divider](src/)
-  - [ ] [Icon](src/components/Icon/Icon.js)
+  - [x] [Divider](src/)
+  - [x] [Icon](src/components/Icon/Icon.js)
   - [ ] [List](src/)
   - [ ] [Tooltip](src/)
   - [ ] [Typography / Text](src/components/Text/Text.js)
