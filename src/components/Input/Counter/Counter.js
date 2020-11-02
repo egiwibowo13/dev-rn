@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { noop } from '../../../utils';
 import { colors } from '../../../utils/theme';
@@ -13,26 +13,26 @@ export const Counter = props => {
   const { label, value, minValue, maxValue, onChangeValue, customContainerStyle } = props;
   const {
     bind: { onAddCounter, onDecreaseCounter, flTotal, onSubmitEditing },
-    view: { disableAddButton, disableDecreaseButton, maxLength, error }
+    view: { disableAddButton, disableDecreaseButton, maxLength, error },
   } = useCounter(value, minValue, maxValue, onChangeValue);
   const styleAdd = disableAddButton ? styles.circleDisable : styles.circleEnable;
   const styleDecrease = disableDecreaseButton ? styles.circleDisable : styles.circleEnable;
 
   const IconMinus = ({color}) => {
-    return(
+    return (
       <View style={[styleDecrease]}>
           <Text.Body1 style={{color: colors.white}}>-</Text.Body1>
       </View>
-    )
-  }
+    );
+  };
 
   const IconPlus = ({color}) => {
-    return(
+    return (
       <View style={[styleAdd]}>
         <Text.Body1 style={{color: colors.white}}>+</Text.Body1>
       </View>
-    )
-  }
+    );
+  };
 
   return (
     <View style={[styles.container, customContainerStyle]}>
@@ -60,7 +60,7 @@ Counter.propTypes = {
   maxValue: PropTypes.number,
   label: PropTypes.string,
   onChangeValue: PropTypes.func,
-  customContainerStyle: PropTypes.object
+  customContainerStyle: PropTypes.object,
 };
 
 Counter.defaultProps = {
@@ -68,5 +68,5 @@ Counter.defaultProps = {
   minValue: 0,
   maxValue: 99,
   onChangeValue: noop,
-  customContainerStyle: {}
+  customContainerStyle: {},
 };

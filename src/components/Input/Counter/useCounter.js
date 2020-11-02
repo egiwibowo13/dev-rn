@@ -73,18 +73,18 @@ const useCounter = (initialValue, minValue, maxValue, onChangeValue) => {
       onDecreaseCounter,
       flTotal: {
         ...flTotal,
-        value: `${flTotal.value}`
+        value: `${flTotal.value}`,
       },
-      onSubmitEditing
+      onSubmitEditing,
     },
     view: {
       disableAddButton,
       disableDecreaseButton,
       maxLength: `${maxValue}`.length + 1,
-      error
+      error,
     },
     setValue: flTotal.setValue,
-    setError
+    setError,
   };
 };
 

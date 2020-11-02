@@ -8,7 +8,7 @@ import IcChecked from '../../../assets/svgs/ic_checked.svg';
 import styles from './CheckBox.styles';
 
 export const CheckBox = props => {
-  const { label, onPress, disabled, containerStyle, customText, checked } = props;
+  const { label, onPress, disabled, containerStyle, checked } = props;
 
   const theme = useThemeContext();
 
@@ -17,11 +17,10 @@ export const CheckBox = props => {
   if (disabled) {
     boxStyle = {
       borderColor: theme.colors.eventInactive,
-      backgroundColor: theme.colors.eventInactive
+      backgroundColor: theme.colors.eventInactive,
     };
     textStyle = { color: theme.colors.eventInactive, marginLeft: 8 };
   }
-  const Iconss = () => <View style={{ backgroundColor: 'red', width: '100%', height: '100%'}} />
   return (
     <TouchableOpacity
       disabled={disabled}
@@ -40,17 +39,15 @@ CheckBox.propTypes = {
   label: PropTypes.string,
   onPress: PropTypes.func,
   containerStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.any]),
-  customText: PropTypes.oneOfType([PropTypes.object, PropTypes.number]),
   checked: PropTypes.bool,
-  readOnly: PropTypes.bool
+  readOnly: PropTypes.bool,
 };
 
 CheckBox.defaultProps = {
   disabled: false,
   containerStyle: {},
-  customText: {},
   label: 'default',
   onPress: noop,
   checked: false,
-  readOnly: false
+  readOnly: false,
 };

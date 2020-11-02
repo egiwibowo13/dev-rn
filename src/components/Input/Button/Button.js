@@ -73,7 +73,7 @@ export const Button = (props) => {
   };
 
   const TextComponent = size === 'small' ? Text.Button2 : Text.Button1;
-  const showIcon = size !== 'small' && !isEmpty(icon)
+  const showIcon = size !== 'small' && !isEmpty(icon);
 
   return (
     <TouchableOpacity

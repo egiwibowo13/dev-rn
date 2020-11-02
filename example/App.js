@@ -6,7 +6,7 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -24,10 +24,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Button, Counter, CheckBox } from 'dev-rn';
+import { Button, Counter, CheckBox, RadioButton } from 'dev-rn';
 import IconSvg from './assets/svgs/ic_checked.svg';
 
 const App: () => React$Node = () => {
+ const [rbValue, setRbValue] = useState(0);
+  const onPressItem = item => {
+    setRbValue(item.key);
+  }
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -35,6 +39,9 @@ const App: () => React$Node = () => {
       <Counter value={1} minValue={0} maxValue={10} label="uhy" />
       <CheckBox label="checkbox" checked />
       <IconSvg color="red" />
+      <View style={{ backgroundColor: 'grey'}}>
+      <RadioButton onPressItem={item => onPressItem(item)} options={[{ key: 0, title: 'laki-laki'}, { key: 1, title: 'perempuan' }]} changeMap={{ key: 'key', title: 'title'}} activeKey={rbValue} />
+      </View>
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"

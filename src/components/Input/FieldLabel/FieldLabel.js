@@ -3,6 +3,8 @@ import {TouchableOpacity, View, TextInput, Platform} from 'react-native';
 import PropTypes from 'prop-types';
 import { getTestID, noop } from '../../../utils';
 import { Text } from '../../DataDisplay/Text';
+import { LabelText } from '../../Common/LabelText';
+import { ErrorText } from '../../Common/ErrorText';
 import FieldLabelStyle from './FieldLabel.styles';
 
 /**
@@ -40,33 +42,20 @@ export const FieldLabel = (props) => {
     style,
     textInputStyle,
     labelStyle,
-    errorStyle
+    errorStyle,
+    testID,
   } = props;
 
   const styles = FieldLabelStyle({type});
 
   const isEditable = state === 'active';
 
-  const LabelText = () => {
-    return (
-      <Text.Body1 style={labelStyle}>
-        {label}
-        {!!subLabel && <Text.Overline1>{subLabel}</Text.Overline1>}{' '}
-        {required && <Text.Overline1 style={styles.required}>*</Text.Overline1>}
-      </Text.Body1>
-    );
-  };
-
-  const ErrorText = () => {
-    return <Text.Caption style={[styles.textError, errorStyle]} {...getTestID(`fl-err-${label}`)}>{error}</Text.Caption>;
-  };
-
-  const IconWrapper = ({icon: Icon, onPress, testID}) => {
+  const IconWrapper = ({icon: Icon, onPress, testID: testIDIcon}) => {
     if (Icon === null) {
       return <View style={{width: 8}} />;
     }
     return (
-      <TouchableOpacity {...getTestID(testID)} style={styles.iconWrapper} disabled={onPress === noop} onPress={onPress}>
+      <TouchableOpacity {...getTestID(testIDIcon)} style={styles.iconWrapper} disabled={onPress === noop} onPress={onPress}>
         <Icon color={styles.iconColor} width={16} height={16} />
       </TouchableOpacity>
     );
@@ -85,17 +74,17 @@ export const FieldLabel = (props) => {
 
   return (
     <React.Fragment>
-      {!!label && <LabelText />}
+      <LabelText label={label} subLabel={subLabel} required={required} labelStyle={labelStyle} testID={`fl-lbl-${testID}`} />
       <View
         style={[
           isEditable ? styles.containerStyle : styles.disabledContainerStyle,
           error && isEditable ? styles.errContainerStyle : {},
-          style
+          style,
         ]}>
         {showPrefix ? (
           <TextExt text={prefix} />
         ) : (
-          <IconWrapper icon={leftIcon} testID={`fl-ic-left-${label}`} />
+          <IconWrapper icon={leftIcon} testID={`fl-ic-left-${testID}`} />
         )}
         <TextInput
           style={[styles.textInputStyle, textInputStyle]}
@@ -104,17 +93,17 @@ export const FieldLabel = (props) => {
           editable={isEditable}
           underlineColorAndroid="transparent"
           returnKeyType={Platform.OS === 'ios' ? 'done' : 'default'}
-          {...getTestID(`fl-${label}`)}
+          {...getTestID(`fl-${testID}`)}
           {...bind}
           {...props}
         />
         {showSuffix ? (
           <TextExt text={suffix} />
         ) : (
-          <IconWrapper icon={rightIcon} testID={`fl-ic-right-${label}`} onPress={onPressIcon} />
+          <IconWrapper icon={rightIcon} testID={`fl-ic-right-${testID}`} onPress={onPressIcon} />
         )}
       </View>
-      {!!error && <ErrorText />}
+      <ErrorText error={error} errorStyle={errorStyle} testID={`fl-err-${testID}`} />
     </React.Fragment>
   );
 };
@@ -136,7 +125,7 @@ FieldLabel.propTypes = {
   style: PropTypes.object,
   textInputStyle: PropTypes.object,
   labelStyle: PropTypes.object,
-  errorStyle: PropTypes.object
+  errorStyle: PropTypes.object,
 };
 
 FieldLabel.defaultProps = {
@@ -156,5 +145,5 @@ FieldLabel.defaultProps = {
   style: {},
   textInputStyle: {},
   labelStyle: {},
-  errorStyle: {}
+  errorStyle: {},
 };

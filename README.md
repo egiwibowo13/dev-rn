@@ -126,7 +126,7 @@ npm run test
   - [x] [Counter](src/components/Input/Counter/Counter.js)
   - [ ] [Date / Time](src/)
   - [x] [FieldLabel](src/components/Input/FieldLabel/FieldLabel.js)
-  - [ ] [RadioButton](src/)
+  - [x] [RadioButton](src/)
   - [ ] [SearchBar](src/)
   - [ ] [Slider](src/)
   - [ ] [Switch](src/)
@@ -152,7 +152,7 @@ npm run test
   - [x] [Icon](src/components/DataDisplay/Icon/Icon.js)
   - [ ] [List](src/)
   - [ ] [Tooltip](src/)
-  - [ ] [Typography / Text](src/components/DataDisplay/Text/Text.js)
+  - [x] [Typography / Text](src/components/DataDisplay/Text/Text.js)
 
 
 ## Author

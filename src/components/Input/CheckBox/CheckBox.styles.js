@@ -6,11 +6,11 @@ const WORD = {
     center: 'center',
     row: 'row',
     spaceBetween: 'space-between',
-    flexStart: 'flex-start'
+    flexStart: 'flex-start',
   };
 const container = {
   justifyContent: WORD.center,
-  alignItems: WORD.center
+  alignItems: WORD.center,
 };
 const boxCore = {
   width: BOX_SIZE,
@@ -18,7 +18,7 @@ const boxCore = {
   borderRadius: BOX_RADIUS,
   borderWidth: 1,
   ...container,
-  marginVertical: 5
+  marginVertical: 5,
 };
 
 export default StyleSheet.create({
@@ -28,12 +28,12 @@ export default StyleSheet.create({
     flexDirection: WORD.row,
     paddingHorizontal: 8,
     height: 40,
-    width: '100%'
+    width: '100%',
   },
   box: {
-    ...boxCore
+    ...boxCore,
   },
   text: {
-    marginLeft: 8
-  }
+    marginLeft: 8,
+  },
 });
