@@ -1,11 +1,11 @@
 import { StyleSheet } from 'react-native';
 import {
-  colors
+  colors,
 } from '../../../utils/theme';
 
 export default StyleSheet.create({
   container: {
-    paddingVertical: 10
+    paddingVertical: 10,
   },
   content: {
     flexDirection: 'row',
@@ -18,7 +18,7 @@ export default StyleSheet.create({
     borderRadius: 16,
     backgroundColor: colors.eventInactive,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   circleEnable: {
     width: 32,
@@ -26,15 +26,15 @@ export default StyleSheet.create({
     borderRadius: 16,
     backgroundColor: colors.basePrimaryMain,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   flContainer: {
     width: 50,
-    marginHorizontal: 10
+    marginHorizontal: 10,
   },
   flTextInput: {
     width: 48,
     height: 40,
-    marginTop: 0
-  }
+    marginTop: 0,
+  },
 });

@@ -25,8 +25,8 @@ export const getNumberAllowNegative = (string = '') => string.replace(/[^-?\.?\d
 export const convertToNumber = (string = '') => {
   const isAlreadyNumber = typeof string === 'number';
   const isString = typeof string === 'string';
-  if (isAlreadyNumber) return string;
-  else if (!isString) return 0;
+  if (isAlreadyNumber) {return string;}
+  else if (!isString) {return 0;}
   const numberString = getNumberOnly(string);
   return isEmpty(numberString) ? 0 : parseFloat(numberString);
 };

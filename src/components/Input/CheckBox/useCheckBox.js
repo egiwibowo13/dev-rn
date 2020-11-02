@@ -16,6 +16,6 @@ export const useCheckBox = (initialValue = false) => {
     setValue,
     reset,
     onPress,
-    checked: value
+    checked: value,
   };
 };

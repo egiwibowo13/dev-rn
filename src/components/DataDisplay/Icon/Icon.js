@@ -47,7 +47,7 @@ Icon.propTypes = {
     testID: PropTypes.string,
     size: PropTypes.oneOf(['large', 'medium', 'small']),
     onPress: PropTypes.func,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
   };
 
   Icon.defaultProps = {
@@ -55,5 +55,5 @@ Icon.propTypes = {
     testID: 'testID',
     size: 'medium',
     onPress: noop,
-    disabled: false
+    disabled: false,
   };

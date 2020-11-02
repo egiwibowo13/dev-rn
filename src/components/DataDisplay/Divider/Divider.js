@@ -8,13 +8,13 @@ export const Divider = ({ style }) => {
     const theme = useThemeContext();
     return (
         <View style={[styles.line, { backgroundColor: theme.colors.grey}, style]} />
-    )
+    );
 };
 
 Divider.propTypes = {
-    style: PropTypes.object
+    style: PropTypes.object,
 };
 
 Divider.defaultProps = {
-    style: {}
+    style: {},
 };

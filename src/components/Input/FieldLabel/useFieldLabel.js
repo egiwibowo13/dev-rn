@@ -1,4 +1,5 @@
 import {useState, useCallback} from 'react';
+import { defaultValidate } from '../../../utils/validation';
 
 /**
  *
@@ -7,7 +8,7 @@ import {useState, useCallback} from 'react';
  *    onValidation: Function
  * }} props
  */
-const useFieldLabel = (initialValue = '', onValidation = () => {}) => {
+const useFieldLabel = (initialValue = '', onValidation = defaultValidate) => {
   const [value, setValue] = useState(initialValue);
   const [error, setError] = useState('');
   const [ref, setRef] = useState({});

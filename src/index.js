@@ -5,5 +5,6 @@ export { Icon } from './components/DataDisplay/Icon';
 export { BaseFlatList } from './components/Base/BaseFlatList';
 export { Counter } from './components/Input/Counter';
 export { CheckBox, useCheckBox } from './components/Input/CheckBox';
+export { RadioButton, RadioButtonItem, useRadioButton } from './components/Input/RadioButton';
 export { Divider } from './components/DataDisplay/Divider';
 export * from './utils/ThemeContext';
