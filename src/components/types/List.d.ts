@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-interface BaseFlatListProps {
+interface ListProps {
     data?: Array,
     renderItem?: React.ReactElement,
     onLoadMore?: () => void,
     onPullDown?: () => void
 }
 
-export const BaseFlatList: React.FC<BaseFlatListProps>;
+export const List: React.FC<ListProps>;

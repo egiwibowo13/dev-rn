@@ -3,8 +3,8 @@ import { View, ActivityIndicator, FlatList, Platform } from 'react-native';
 import PropTypes from 'prop-types';
 import { noop } from '../../../utils';
 import { useThemeContext } from '../../../utils/ThemeContext';
-import styles from './BaseFlatList.styles';
-import useBaseFlatList from './useBaseFlatList';
+import styles from './List.styles';
+import useList from './useList';
 
 const RenderFooter = () => {
     const context = useThemeContext();
@@ -17,7 +17,7 @@ const FlatListItemSeparator = () => {
   return <View style={styles.separator} />;
 };
 
-export const BaseFlatList = (props) => {
+export const List = (props) => {
   const { data, renderItem, onLoadMore, onPullDown, meta } = props;
   const {
     keyExtractor,
@@ -26,7 +26,7 @@ export const BaseFlatList = (props) => {
     getItemLayout,
     isRefresh,
     showFooter,
-  } = useBaseFlatList(onLoadMore, onPullDown, meta);
+  } = useList(onLoadMore, onPullDown, meta);
 
   return (
     <FlatList
@@ -50,7 +50,7 @@ export const BaseFlatList = (props) => {
   );
 };
 
-BaseFlatList.propTypes = {
+List.propTypes = {
   onLoadMore: PropTypes.func,
   onPullDown: PropTypes.func,
   data: PropTypes.instanceOf(Array),
@@ -58,7 +58,7 @@ BaseFlatList.propTypes = {
   meta: PropTypes.instanceOf(Object),
 };
 
-BaseFlatList.defaultProps = {
+List.defaultProps = {
   onLoadMore: noop,
   onPullDown: noop,
   data: [],

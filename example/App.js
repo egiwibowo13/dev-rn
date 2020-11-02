@@ -6,13 +6,12 @@
  * @flow strict-local
  */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
   View,
-  Text,
   StatusBar,
 } from 'react-native';
 
@@ -24,62 +23,29 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Button, Counter, CheckBox, RadioButton } from 'dev-rn';
+import { Button, Counter, CheckBox, RadioButton, useThemeContext, List, Text } from 'dev-rn';
 import IconSvg from './assets/svgs/ic_checked.svg';
 
 const App: () => React$Node = () => {
- const [rbValue, setRbValue] = useState(0);
+  const [rbValue, setRbValue] = useState(0);
   const onPressItem = item => {
     setRbValue(item.key);
   }
+
+  const theme = useThemeContext()
   return (
     <>
       <StatusBar barStyle="dark-content" />
-      <Button title="uhuy" type="secondary" />
-      <Counter value={1} minValue={0} maxValue={10} label="uhy" />
-      <CheckBox label="checkbox" checked />
-      <IconSvg color="red" />
-      <View style={{ backgroundColor: 'grey'}}>
-      <RadioButton onPressItem={item => onPressItem(item)} options={[{ key: 0, title: 'laki-laki'}, { key: 1, title: 'perempuan' }]} changeMap={{ key: 'key', title: 'title'}} activeKey={rbValue} />
-      </View>
+
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}>
-          <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
-          )}
-          <View style={styles.body}>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
-            <LearnMoreLinks />
-          </View>
+          style={[styles.scrollView, { backgroundColor: theme.colors.greyLight }]}>
+          <Button title="Press Me" type="secondary" />
+          <Counter value={1} minValue={0} maxValue={10} label="count label" />
+          <CheckBox label="checkbox" checked />
+          <RadioButton label="Jenis Kelamin :" onPressItem={item => onPressItem(item)} options={[{ key: 0, title: 'laki-laki' }, { key: 1, title: 'perempuan' }]} changeMap={{ key: 'key', title: 'title' }} activeKey={rbValue} />
+          <List data={[{ title: 'mely' }, { title: 'lala' }, { title: 'septy' }]} renderItem={({ item }) => <Text.Body1>{item.title}</Text.Body1>} />
         </ScrollView>
       </SafeAreaView>
     </>
@@ -88,7 +54,7 @@ const App: () => React$Node = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+
   },
   engine: {
     position: 'absolute',
