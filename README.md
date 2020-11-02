@@ -22,6 +22,10 @@
 npm install dev-rn
 ```
 
+### Installing peer dependencies
+```
+npm i @react-native-community/slider react-native-svg react-native-svg-transformer
+```
 This library needs `react-native-svg` & `react-native-svg-transformer` so go on and install that too. Check out Install guide [react-native-svg](https://github.com/react-native-svg/react-native-svg#installation), [react-native-svg-transformer](https://github.com/kristerkari/react-native-svg-transformer).
 
 
@@ -128,7 +132,7 @@ npm run test
   - [x] [FieldLabel](src/components/Input/FieldLabel/FieldLabel.js)
   - [x] [RadioButton](src/components/Input/RadioButton/RadioButton/RadioButton.js)
   - [ ] [SearchBar](src/)
-  - [ ] [Slider](src/)
+  - [x] [Slider](src/components/Input/Slider/Slider.js)
   - [ ] [Switch](src/)
 - Navigation
   - [ ] [Bottom Navigation](src/)
