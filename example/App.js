@@ -23,8 +23,10 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Button, Counter, CheckBox, useThemeContext, List, Text, RadioButton, Slider } from 'dev-rn';
-import IconSvg from './assets/svgs/ic_checked.svg';
+import { Button, Counter, CheckBox, useThemeContext, List, Text, RadioButton, Slider, Tooltip } from 'dev-rn';
+import { SvgUri } from 'react-native-svg';
+
+const ExampleIcon = () => <SvgUri width="100%" height="100%" uri="http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg" />
 
 const App: () => React$Node = () => {
   const [rbValue, setRbValue] = useState(0);
@@ -40,13 +42,15 @@ const App: () => React$Node = () => {
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
-          style={[styles.scrollView, { backgroundColor: theme.colors.greyLight }]}>
+          style={[styles.scrollView, { backgroundColor: theme.colors.greyLight }]}
+        >
           <Button title="Press Me" type="secondary" />
           <Counter value={1} minValue={0} maxValue={10} label="count label" />
           <CheckBox label="checkbox" checked />
           <Slider label="slider label" minimum={0} maximum={10} />
           <RadioButton label="Jenis Kelamin :" onPressItem={item => onPressItem(item)} options={[{ key: 0, title: 'laki-laki' }, { key: 1, title: 'perempuan' }]} changeMap={{ key: 'key', title: 'title' }} activeKey={rbValue} />
           <List data={[{ title: 'mely' }, { title: 'lala' }, { title: 'septy' }]} renderItem={({ item }) => <Text.Body1>{item.title}</Text.Body1>} />
+          <Tooltip icon={ExampleIcon} title="title" message="message" />
         </ScrollView>
       </SafeAreaView>
     </>
