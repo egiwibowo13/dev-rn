@@ -8,3 +8,4 @@ export * from './components/types/Divider';
 export * from './components/types/Counter';
 export * from './components/types/CheckBox';
 export * from './components/types/RadioButton';
+export * from './components/types/Slider';

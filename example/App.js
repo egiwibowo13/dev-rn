@@ -23,7 +23,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import { Button, Counter, CheckBox, RadioButton, useThemeContext, List, Text } from 'dev-rn';
+import { Button, Counter, CheckBox, useThemeContext, List, Text, RadioButton, Slider } from 'dev-rn';
 import IconSvg from './assets/svgs/ic_checked.svg';
 
 const App: () => React$Node = () => {
@@ -44,6 +44,7 @@ const App: () => React$Node = () => {
           <Button title="Press Me" type="secondary" />
           <Counter value={1} minValue={0} maxValue={10} label="count label" />
           <CheckBox label="checkbox" checked />
+          <Slider label="slider label" minimum={0} maximum={10} />
           <RadioButton label="Jenis Kelamin :" onPressItem={item => onPressItem(item)} options={[{ key: 0, title: 'laki-laki' }, { key: 1, title: 'perempuan' }]} changeMap={{ key: 'key', title: 'title' }} activeKey={rbValue} />
           <List data={[{ title: 'mely' }, { title: 'lala' }, { title: 'septy' }]} renderItem={({ item }) => <Text.Body1>{item.title}</Text.Body1>} />
         </ScrollView>
