@@ -10,7 +10,7 @@ export const RadioButtonItem = props => {
   const { title, onPress, disabled, customContainer, customText, selected, error } = props;
 
   const theme = useThemeContext();
-  const circleStyle = [styles.circle, { borderColor: theme.colors.greyLight }];
+  const circleStyle = [styles.circle, { borderColor: theme.colors.basePrimaryMain }];
   const innerCircleStyle = [styles.innerCircle, { backgroundColor: theme.colors.basePrimaryMain }];
   const textStyle = [styles.text, { color: theme.colors.fontPrimaryDark }];
   if (disabled) {

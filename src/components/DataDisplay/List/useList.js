@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { noop, isEmpty, isObjectEmpty } from '../../../utils';
 
-const useBaseFlatList = (onLoadMore = noop, onPullDown = noop, meta) => {
+const useList = (onLoadMore = noop, onPullDown = noop, meta) => {
   const [isLoadMore, setIsLoadMore] = useState(false);
   const [isRefresh, setIsRefresh] = useState(false);
 
@@ -63,4 +63,4 @@ const useBaseFlatList = (onLoadMore = noop, onPullDown = noop, meta) => {
   };
 };
 
-export default useBaseFlatList;
+export default useList;

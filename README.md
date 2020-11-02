@@ -126,7 +126,7 @@ npm run test
   - [x] [Counter](src/components/Input/Counter/Counter.js)
   - [ ] [Date / Time](src/)
   - [x] [FieldLabel](src/components/Input/FieldLabel/FieldLabel.js)
-  - [x] [RadioButton](src/)
+  - [x] [RadioButton](src/components/Input/RadioButton/RadioButton/RadioButton.js)
   - [ ] [SearchBar](src/)
   - [ ] [Slider](src/)
   - [ ] [Switch](src/)
@@ -142,7 +142,7 @@ npm run test
   - [ ] [Accordion](src/)
 - Feedback
   - [ ] [Progress](src/)
-  - [ ] [Dialog](src/)
+  - [ ] [Modal](src/)
   - [ ] [Snackbar](src/)
 - Data Display
   - [ ] [Avatar](src/)
@@ -150,7 +150,7 @@ npm run test
   - [ ] [Chip](src/)
   - [x] [Divider](src/)
   - [x] [Icon](src/components/DataDisplay/Icon/Icon.js)
-  - [ ] [List](src/)
+  - [x] [List](src/components/DataDisplay/List/List.js)
   - [ ] [Tooltip](src/)
   - [x] [Typography / Text](src/components/DataDisplay/Text/Text.js)
 
