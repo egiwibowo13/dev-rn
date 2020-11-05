@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native';
-import { colors, typography } from '../../../utils/theme';
 
 const colorBackdrop = 'rgba(52, 52, 52, 0.8)';
 export default StyleSheet.create({
@@ -11,14 +10,10 @@ export default StyleSheet.create({
     borderRadius: 8
   },
   title: {
-    ...typography.subtitle1,
-    color: colors.fontPrimaryDark,
     flex: 1,
     padding: 8
   },
   message: {
-    ...typography.body2,
-    color: colors.fontPrimaryDark,
     flex: 1,
     padding: 8,
     marginBottom: 16
@@ -32,7 +27,6 @@ export default StyleSheet.create({
   popupContainerModal: {
     width: '100%',
     alignSelf: 'baseline',
-    backgroundColor: colors.white,
     position: 'absolute',
     bottom: 0,
     borderTopRightRadius: 10,
