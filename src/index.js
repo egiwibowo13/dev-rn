@@ -8,4 +8,5 @@ export { CheckBox, useCheckBox } from './components/Input/CheckBox';
 export { RadioButton, RadioButtonItem, useRadioButton } from './components/Input/RadioButton';
 export { Slider, useSlider } from './components/Input/Slider';
 export { Divider } from './components/DataDisplay/Divider';
+export { Tooltip } from './components/DataDisplay/Tooltip';
 export * from './utils/ThemeContext';
